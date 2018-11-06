@@ -9,3 +9,6 @@ The goal of this project is to build a financial application that aggregates new
 ![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)
 
 
+## Testing
+1) CI/CD is enabled. 
+- Pushes to any branch will trigger a suite of tests that upon completion will deploy the latest build or rollback.
