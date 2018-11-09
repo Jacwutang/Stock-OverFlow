@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../';
+import Footer from '../';
 
-it('App renders without crashing', () => {
+it('Footer renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+  ReactDOM.render(<Footer />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
