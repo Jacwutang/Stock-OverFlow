@@ -19,7 +19,6 @@ class  Search extends Component {
   }
 
   render(){
-    console.log(this.state.query);
     return(
       <div className={styles.search_container}>
         <i className={`fas fa-search ${styles.icon_input_field}`}></i>
