@@ -1,6 +1,8 @@
 # Stock-Overflow
 
-The goal of this project is to build a financial application that aggregates news,prices, and charts. Plans include a stock trading simulator.
+Stock Overflow is an application that aggregates news, prices, and charts and provides a platform for users to stay up to date with the market.
+
+- Plans include a trading simulator: Test out strategies in a sandbox environment and see if you can beat the market!
 
 ### [Live](https://morning-temple-63814.herokuapp.com/)
 
@@ -11,5 +13,7 @@ The goal of this project is to build a financial application that aggregates new
 
 
 ## Testing
-1) CI/CD is enabled. 
+
+#### CI/CD pipeline is enabled. 
 - Pushes to any branch will trigger a suite of tests that upon completion will deploy the latest build or rollback.
+
