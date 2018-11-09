@@ -16,4 +16,5 @@ Stock Overflow is an application that aggregates news, prices, and charts and pr
 
 #### CI/CD pipeline is enabled. 
 - Pushes to any branch will trigger a suite of tests that upon completion will deploy the latest build or rollback.
+![testing](https://puu.sh/BYIDq/be0ff5b360.png)
 
