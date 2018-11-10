@@ -1,7 +1,22 @@
 const express = require('express');
 const path = require('path');
+const session = require('express-session');
+const cors = require('cors');
+const components = require('./components');
+const pgp = require('pg-promise')();
+const db = pgp('postgres://username:password@host:port/database');
 
+
+// Wrap server with express
 const app = express();
+
+// Allow CORS for dev purposes
+app.use(cors());
+
+//Load in routes
+app.use('/', components.routes);
+
+// Load in DB:
 
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, '/frontend/build')));
