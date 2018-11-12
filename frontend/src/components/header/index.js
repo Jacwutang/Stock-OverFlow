@@ -1,11 +1,13 @@
 import React from "react";
-import Search from '../search';
+import Search from "../search";
 import styles from "./index.module.css";
-import Logo from 'assets/images/logo.svg';
+import Logo from "assets/images/logo.svg";
 const Header = () => (
   <nav className={styles.nav}>
     <div className={styles.navbar_left}>
-      <a href="/"> <img alt="logo" src={Logo} className={styles.logo}/> </a>
+      <a href="/">
+        <img alt="logo" src={Logo} className={styles.logo} />
+      </a>
       <Search />
     </div>
     <ul className={styles.navbar_right}>
@@ -14,5 +16,5 @@ const Header = () => (
       <li> Simulator </li>
     </ul>
   </nav>
-)
+);
 export default Header;

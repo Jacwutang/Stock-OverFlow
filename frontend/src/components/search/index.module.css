@@ -1,25 +1,18 @@
-.input_search{
+.input_search {
   border: 1px solid #f7f7f7;
   text-indent: 30px;
   /* color: #b1bfc4; */
   width: 225px;
   height: 100%;
   font-size: 15px;
-
 }
 
-.search_container{
-  height:50%;
+.search_container {
+  height: 50%;
   position: relative;
 }
 
-.icon_input_field{
-  position: absolute;
-  top: 12px;
-  left: 6px;
-}
-
-.fas fa-search{
+.icon_input_field {
   position: absolute;
   top: 12px;
   left: 6px;
