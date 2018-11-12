@@ -4,7 +4,6 @@ const session = require("express-session");
 const cors = require("cors");
 const components = require("./components");
 const { db } = require("./config");
-const appRoot = require("app-root-path");
 // Wrap server with express
 const app = express();
 
@@ -14,6 +13,7 @@ app.use(cors());
 //Load in routes
 app.use("/", components.routes);
 
+global.__base = __dirname;
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, "/frontend/build")));
 

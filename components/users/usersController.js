@@ -1,6 +1,5 @@
-// const user = require("./user");
 const { Users } = require("../../config/db/repos");
-// require(appRoot + '/config/db/repos');
+//const {Users} = require(__base + '/config/db/repos');
 
 // Define controller methods here
 const getUser = (req, res) => {

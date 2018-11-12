@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/Jacwutang/Stock-Overflow#readme",
   "dependencies": {
-    "app-root-path": "^2.1.0",
     "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
