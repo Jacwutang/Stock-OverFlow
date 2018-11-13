@@ -4,7 +4,7 @@ const controller = require('./usersController.js');
 
 // routes are prefied with '/users'
 router.get('/', controller.getUser);
-router.post('/add', controller.saveUser);
+// router.post('/add', controller.saveUser);
 
 
 

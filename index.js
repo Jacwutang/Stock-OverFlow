@@ -1,7 +1,6 @@
 global.__base = __dirname;
 const express = require("express");
 const path = require("path");
-const session = require("express-session");
 const cors = require("cors");
 const components = require("./components");
 const { db } = require("./config");
@@ -14,6 +13,7 @@ app.use(cors());
 
 //Load in routes
 app.use("/api", components.routes);
+
 
 
 // Serve the static files from the React app
