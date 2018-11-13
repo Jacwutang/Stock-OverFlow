@@ -1,14 +1,21 @@
-const { Users } = require("../../config/db/repos");
-//const {Users} = require(__base + '/config/db/repos');
+// const { Users } = require("../../config/db/repos");
+const db  = require(__base + '/config/db');
 
 // Define controller methods here
 const getUser = (req, res) => {
   console.log(" get request users");
-  Users.create();
-  //Creates users table;
-  res.send("SUCCESS Users");
+  db.users.create();
+  res.send("success");
 };
 
+const saveUser = (req,res) => {
+  console.log("post request users");
+  db.users.add("Jack");
+  res.send("success post");
+
+}
+
 module.exports = {
-  getUser
+  getUser,
+  saveUser
 };

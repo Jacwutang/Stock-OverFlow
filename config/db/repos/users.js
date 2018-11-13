@@ -19,7 +19,19 @@ class UsersRepository {
 
   // Creates the table;
   create() {
-    return this.db.none(schema.create);
+       return this.db.none(schema.create);
+  }
+
+  add(username) {
+       return this.db.one(schema.add, username);
+   }
+
+  findById() {
+
+  }
+
+  findByName() {
+
   }
 }
 
