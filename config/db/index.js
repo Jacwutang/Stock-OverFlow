@@ -23,7 +23,7 @@ const cn = {
 };
 
 // Create DB instance
-const db = pgp(cn);
+const db = pgp(process.env.DATABASE_URL || cn);
 
 //Initialize diagnostics
 db
