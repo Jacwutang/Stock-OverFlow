@@ -2,9 +2,11 @@
 
 Stock Overflow is an application that aggregates news, prices, and charts and provides a platform for users to stay up to date with the market.
 
-- Plans include a trading simulator: Test out strategies in a sandbox environment and see if you can beat the market!
+## Features
+ - trading simulator: Test out strategies in a sandbox environment and see if you can beat the market!
+ - market heatmap: A live twitter feed with color coded hot spots. For example #Goog, #Amzn, #Appl
 
-### [Live](https://morning-temple-63814.herokuapp.com/)
+### [Live](https://stock-overflow-prod.herokuapp.com/)
 
 ## Deployment status
 ![Heroku](https://heroku-badge.herokuapp.com/?app=morning-temple-63814)
