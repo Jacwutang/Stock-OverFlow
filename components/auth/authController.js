@@ -1,10 +1,11 @@
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
+const db = require(__base + '/config/db');
+const User = require(__base + '/components/users/userModel');
 
 
 const login = (req, res, next) => {
-  // session:false so that user is not saved in 'session'. When '/login' route is hit, use passport to authenticate.
-  passport.authenticate('local', {session: false}, (err, user, info) => {
+    passport.authenticate('local', {session: false}, (err, user, info) => {
         if (err || !user) {
             return res.status(400).json({
                 message: 'Something is not right',
@@ -22,24 +23,55 @@ const login = (req, res, next) => {
            return res.json({user, token});
         });
     })(req, res);
+  };
 
-
-};
+  /**************************************************/
 
 const signup  = (req,res) => {
-  console.log("post request users");
+  // db.users.create();
+  console.log("authController signup");
+  const {password, username} = req.body;
+  console.log(password,username);
+
   /*
-  1) Create user. Save DB
-  2) login user using passport
-  */
+  Check if user exists already by username
+  db.users.findByUsername(req.body.username) --> user
+  If user
+    return error msg user already exists
+  else
+    - gen pass hash
+    - insert user into
+    - perform passport login
+    */
+
+    db.users.findByUsername(username)
+    .then( user => {
+      console.log("User is", user);
+      if(user) {
+        res.send( {error:"Username already exists!"} )
+      }
+      else {
+        User.generateHash(password)
+        .then( password_hash => {
+          console.log(password_hash)
+          return db.users.insert(username, password_hash);
+          //Passport login here
+        })
+        .then( user => console.log("new created user", user));
+
+      }
+    });
 
 }
 
+/**************************************************/
 const logout = (req,res) => {
-/*
-1) Passport js logout
-*/
+  req.logout();
+  //Terminate JWT?
+  res.redirect('/');
 }
+
+/**************************************************/
 
 module.exports = {
   login,

@@ -22,17 +22,33 @@ class UsersRepository {
        return this.db.none(schema.create);
   }
 
-  add(username) {
-       return this.db.one(schema.add, username);
+  //Insert a user w/username & password
+  insert(username, password) {
+        console.log(username,password,"users repo");
+        return this.db.one(schema.insert, [username, password]);
    }
 
-  findById() {
+   // Removes all records from the table;
+    empty() {
+        return this.db.none(schema.empty);
+    }
+
+  findById(id) {
+        return this.db.oneOrNone(
+          'SELECT * FROM users WHERE id = $1', +id
+        );
+  }
+
+  findByUsername(username) {
+      console.log("repo users findByUsername");
+      return this.db.oneOrNone(
+        'SELECT * FROM users WHERE username = $1', username
+      )
+
 
   }
 
-  findByName() {
 
-  }
 }
 
 //////////////////////////////////////////////////////////

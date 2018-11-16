@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/Jacwutang/Stock-Overflow#readme",
   "dependencies": {
+    "bcrypt": "^3.0.2",
     "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
     "dotenv": "^6.1.0",

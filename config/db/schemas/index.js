@@ -6,7 +6,9 @@ const path = require("path");
 module.exports = {
   users: {
     create: sql("users/create.sql"),
-    add: sql("users/add.sql")
+    insert: sql("users/insert.sql"),
+    empty:  sql("users/empty.sql"),
+    seed:   sql("users/seed.sql")
   }
 };
 

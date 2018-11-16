@@ -5,7 +5,7 @@ const controller = require('./authController');
 // routes are prefied with '/api/auth'
 router.post('/login', controller.login);
 router.post('/signup', controller.signup);
-router.post('/logout', controller.logout);
+router.get ('/logout', controller.logout);
 
 
 

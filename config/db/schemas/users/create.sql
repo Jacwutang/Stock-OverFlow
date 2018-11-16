@@ -6,6 +6,7 @@ Create table users
 
 CREATE TABLE ${schema~}.users (
   ID SERIAL PRIMARY KEY,
-  username VARCHAR NOT NULL
+  username VARCHAR NOT NULL,
+  password VARCHAR NOT NULL
 
 );

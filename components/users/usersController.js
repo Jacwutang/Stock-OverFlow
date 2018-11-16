@@ -1,5 +1,6 @@
-// const { Users } = require("../../config/db/repos");
+
 const db  = require(__base + '/config/db');
+
 
 // Define controller methods here
 const getUser = (req, res) => {
@@ -8,6 +9,8 @@ const getUser = (req, res) => {
   // db.users.create();
   res.send("success");
 };
+
+
 
 
 
