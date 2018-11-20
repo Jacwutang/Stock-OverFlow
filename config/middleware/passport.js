@@ -14,19 +14,32 @@ passport.use('local',new LocalStrategy({
   passwordField: 'password'
   },
   (username, password, done) => {
-    //this one is typically a DB call. Assume that the returned user object is pre-formatted and ready for storing in JWT
-    db.users.findOne({ username: username }, function(err, user) {
-      if (err) { return done(err); }
-      if (!user) {
+    db.users.findByUsername(username)
+    .then(user => {
+
+      // console.log(user, "USER FOUND");
+      if(!user) {
+        // console.log("no user");
         return done(null, false, { message: 'Incorrect username.' });
       }
-      if (User.validPassword(password)) {
-        return done(null, false, { message: 'Incorrect password.' });
-      }
-      return done(null, user);
-    });
-  }
-));
+      User.validPassword(password, user.password)
+      .then( validity => {
+        // console.log(validity);
+        if(validity == false) {
+          return done(null, false, { message: 'Incorrect password.' });
+        }
+
+        return done(null, user);
+      })
+    })
+    .catch(err => {
+      console.log("error caught");
+      console.log(err);
+      return done(err)
+    })
+  })
+ );
+
 
 
 

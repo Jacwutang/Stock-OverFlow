@@ -26,12 +26,12 @@ class UsersRepository {
   insert(username, password) {
         console.log(username,password,"users repo");
         return this.db.one(schema.insert, [username, password]);
-   }
+  }
 
    // Removes all records from the table;
-    empty() {
+  empty() {
         return this.db.none(schema.empty);
-    }
+  }
 
   findById(id) {
         return this.db.oneOrNone(
@@ -40,12 +40,9 @@ class UsersRepository {
   }
 
   findByUsername(username) {
-      console.log("repo users findByUsername");
       return this.db.oneOrNone(
         'SELECT * FROM users WHERE username = $1', username
       )
-
-
   }
 
 

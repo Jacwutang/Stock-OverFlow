@@ -17,34 +17,19 @@ const login = (req, res, next) => {
            if (err) {
                res.send(err);
            }
-
            // generate a signed son web token with the contents of user object and return it in the response
            const token = jwt.sign(user, 'your_jwt_secret');
            return res.json({user, token});
         });
     })(req, res);
-  };
+};
 
   /**************************************************/
 
 const signup  = (req,res) => {
-  // db.users.create();
-  console.log("authController signup");
   const {password, username} = req.body;
-  console.log(password,username);
-
-  /*
-  Check if user exists already by username
-  db.users.findByUsername(req.body.username) --> user
-  If user
-    return error msg user already exists
-  else
-    - gen pass hash
-    - insert user into
-    - perform passport login
-    */
-
-    db.users.findByUsername(username)
+  // console.log(password,username);
+  db.users.findByUsername(username)
     .then( user => {
       console.log("User is", user);
       if(user) {
@@ -57,7 +42,21 @@ const signup  = (req,res) => {
           return db.users.insert(username, password_hash);
           //Passport login here
         })
-        .then( user => console.log("new created user", user));
+        .then( user => {
+
+          console.log("new created user", user);
+          req.login(user, {session: false}, (err) => {
+            if(err) {
+              res.send(err);
+            }
+
+            const token = jwt.sign(user, 'your_jwt_secret');
+            console.log(user,token, "SIGNUP THEN LOGIN");
+            return res.json({user, token});
+
+          });
+
+        });
 
       }
     });
