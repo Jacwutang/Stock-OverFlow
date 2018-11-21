@@ -1,4 +1,4 @@
-const sessionReducer = (state = {}, action) => {
+const authReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type){
     default:
@@ -6,4 +6,4 @@ const sessionReducer = (state = {}, action) => {
   }
 }
 
-export default sessionReducer;
+export default authReducer;

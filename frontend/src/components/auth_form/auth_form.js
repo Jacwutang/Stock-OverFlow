@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styles from "./index.module.css";
 
-class SessionForm extends Component {
+class AuthForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,17 +26,20 @@ class SessionForm extends Component {
   renderErrors() {}
 
   render() {
+    
     return (
       <div className={styles.session_form_wrapper}>
         <form className="" onSubmit={this.handleSubmit}>
           Please login or signup
           <input
             value={this.state.username}
+            type="text"
             placeholder="Username"
             onChange={this.handleChange("username")}
           />
           <input
             value={this.state.password}
+            type="password"
             placeholder="Password"
             onChange={this.handleChange("password")}
           />
@@ -46,4 +49,4 @@ class SessionForm extends Component {
   }
 }
 
-export default SessionForm;
+export default AuthForm;

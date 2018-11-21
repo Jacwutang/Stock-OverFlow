@@ -1,9 +1,7 @@
-const entitiesReducer = (state = {}, action) => {
-  Object.freeze(state);
-  switch(action.type){
-    default:
-    return state;
-  }
-}
+import {combineReducers} from 'redux';
+import watchLists from './watch_lists_reducer';
 
-export default entitiesReducer;
+
+export default combineReducers({
+  watchLists
+})
