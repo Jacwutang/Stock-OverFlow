@@ -48,17 +48,17 @@ passport.use(new JWTStrategy({
         jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
         secretOrKey   : 'your_jwt_secret'
     },
-     (jwtPayload, cb) => {
-
-        //find the user in db if needed. This functionality may be omitted if you store everything you'll need in JWT payload.
-        return User.findOneById(jwtPayload.id)
-            .then(user => {
-                return cb(null, user);
-            })
-            .catch(err => {
-                return cb(err);
-            });
-    }
+     (jwtPayload, done) => {
+       console.log(jwtPayload, done, "JWT PASSPORT");
+        if(jwtPayload) {
+          console.log("inside");
+          return done(null, jwtPayload);
+        }
+        else{
+          console.log("2nd inside");
+          return done({error: "Unable to match JWT"} )
+        }
+      }
 ));
 
 module.exports = passport;

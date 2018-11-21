@@ -7,32 +7,23 @@ const bodyParser = require('body-parser');
 
 /* Load in custom modules
 --------------------------------- */
-const components = require("./components");
-// Load passport config
 const {passport} = require('./config/middleware');
-// Load DB config
 require('./config/db');
-
+const components = require("./components");
 
 
 /* express app
 ----------------------------------------------------------
 */
-// Wrap server with express
 const app = express();
 
-// Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-
-//Initialize passport module
 app.use(passport.initialize());
 
-// Allow CORS for dev purposes
 app.use(cors());
 
-//Load in routes
 app.use("/api", components.routes);
 
 
