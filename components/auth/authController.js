@@ -6,12 +6,15 @@ const User = require(__base + '/components/users/userModel');
 
 const login = (req, res, next) => {
     passport.authenticate('local', {session: false}, (err, user, info) => {
-        if (err || !user) {
-            return res.status(400).json({
-                message: 'Something is not right',
-                user   : user
-            });
+        if (err) {
+            res.send(err);
         }
+
+        if(!user) {
+          return res.status(403).send({success:false, info});
+
+        }
+
        //Middleware 'login'
        req.login(user, {session: false}, (err) => {
            if (err) {
@@ -19,16 +22,16 @@ const login = (req, res, next) => {
            }
            // generate a signed son web token with the contents of user object and return it in the response
            const token = jwt.sign(user, 'your_jwt_secret');
-           return res.json({user, token});
+           return res.json({user, token, success:true });
         });
-    })(req, res);
+    })(req, res, next);
 };
 
   /**************************************************/
 
 const signup  = (req,res) => {
   const {password, username} = req.body;
-  // console.log(password,username);
+
   db.users.findByUsername(username)
     .then( user => {
       console.log("User is", user);
@@ -52,7 +55,7 @@ const signup  = (req,res) => {
 
             const token = jwt.sign(user, 'your_jwt_secret');
             console.log(user,token, "SIGNUP THEN LOGIN");
-            return res.json({user, token});
+            return res.json({user, token, success:true});
 
           });
 
@@ -65,7 +68,7 @@ const signup  = (req,res) => {
 
 /**************************************************/
 const logout = (req,res) => {
-  req.logout();
+  // req.logout();
   //Terminate JWT?
   res.redirect('/');
 }

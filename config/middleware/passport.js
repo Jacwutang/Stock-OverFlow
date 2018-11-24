@@ -14,6 +14,7 @@ passport.use('local',new LocalStrategy({
   passwordField: 'password'
   },
   (username, password, done) => {
+    // console.log(username,password);
     db.users.findByUsername(username)
     .then(user => {
 

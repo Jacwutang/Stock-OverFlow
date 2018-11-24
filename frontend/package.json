@@ -2,6 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+    
   "dependencies": {
     "jest-coverage-badges": "^1.0.0",
     "react": "^16.6.0",

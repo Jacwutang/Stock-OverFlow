@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import styles from "./index.module.css";
 
-class  Search extends Component {
+class Search extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -30,6 +30,3 @@ class  Search extends Component {
 }
 
 export default Search;
-
-
-// Refactor to make it re-usable for searching for stocks, users, whatever.

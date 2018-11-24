@@ -8,7 +8,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
     !loggedIn ? (
       <Component {...props} />
     ) : (
-      <Redirect to="/" />
+      <Redirect to="/user" />
     )
   )}/>
 );
@@ -26,7 +26,8 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
 
 // access the Redux state to check if the user is logged in
 const mapStateToProps = state => {
-  return { loggedIn: Boolean(state.auth.id) };
+  console.log( Boolean(state.auth.user) )
+  return { loggedIn: Boolean(state.auth.user) };
 }
 
 // connect Auth to the redux store

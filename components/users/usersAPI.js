@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
 const controller = require('./usersController.js');
 
 // routes are prefied with '/users'
 router.get('/', controller.getUser);
-// router.post('/add', controller.saveUser);
 
 
+// passport.authenticate('jwt', {session: false})
 
 
 

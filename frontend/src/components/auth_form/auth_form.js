@@ -21,16 +21,29 @@ class AuthForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.processForm(this.state);
   }
 
-  renderErrors() {}
+  renderErrors() {
+    return (
+       <ul>
+         {this.props.errors.map((error, i) => (
+           <li key={`error-${i}`}>
+             <i className={`fa fa-exclamation-circle ${styles.warning_icon}`} aria-hidden="true" />
+             &nbsp; {error}
+           </li>
+          ))}
+       </ul>
+     );
+   }
 
   render() {
-    
+    console.log(this.props.errors);
     return (
       <div className={styles.session_form_wrapper}>
-        <form className="" onSubmit={this.handleSubmit}>
-          Please login or signup
+        <div> {this.renderErrors()} </div>
+        <form className={styles.auth_form} onSubmit={this.handleSubmit}>
+          Please {`${this.props.formType}`}
           <input
             value={this.state.username}
             type="text"
@@ -43,6 +56,7 @@ class AuthForm extends Component {
             placeholder="Password"
             onChange={this.handleChange("password")}
           />
+          <input type="submit"/>
         </form>
       </div>
     );
