@@ -7,6 +7,7 @@ import styles from './index.module.css';
 import AuthForm from '../auth_form';
 import Home from '../home';
 import User from '../user';
+import Company from '../company';
 
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
     <Route exact path="/" component={Home} />
 
     <Route path="/user" component={User} />
+    <Route path="/company" component={Company} />
 
   </div>
 );
