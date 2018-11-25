@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Layout from '../layout';
+
 class User extends Component{
   constructor(props){
     super(props);
@@ -11,9 +12,11 @@ class User extends Component{
   }
   render(){
     return(
-        <Layout/>
+        <Layout>
+          
+        </Layout>
 
-    )
+    );
   }
 }
 

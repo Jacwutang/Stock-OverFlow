@@ -2,8 +2,9 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-    
   "dependencies": {
+    "ajv": "^6.5.5",
+    "highcharts-react-official": "^2.0.0",
     "jest-coverage-badges": "^1.0.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
