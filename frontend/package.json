@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "ajv": "^6.5.5",
+    "highcharts": "^6.2.0",
     "highcharts-react-official": "^2.0.0",
     "jest-coverage-badges": "^1.0.0",
     "react": "^16.6.0",
