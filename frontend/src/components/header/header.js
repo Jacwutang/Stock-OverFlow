@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import Search from "../search";
 import styles from "./index.module.css";
 import Logo from "assets/images/logo.svg";
@@ -10,7 +9,7 @@ const Header = (props) => {
     if(props.loggedIn) {
       return(
         <ul className={styles.navbar_right}>
-            <li> <Link to="/simulator"> Simulator </Link> </li>
+            <li> <a href="/simulator"> Simulator </a> </li>
             <li onClick={props.logout}> Log out </li>
           </ul>
       );
@@ -18,9 +17,9 @@ const Header = (props) => {
     else {
       return(
         <ul className={styles.navbar_right}>
-           <li> <Link to="/signup"> Sign Up </Link> </li>
-           <li> <Link to="/login"> Log In </Link>  </li>
-           <li> <Link to="/simulator"> Simulator </Link>  </li>
+           <li> <a href="/signup"> Sign Up </a> </li>
+           <li> <a href="/login"> Log In </a>  </li>
+           <li> <a href="/simulator"> Simulator </a>  </li>
          </ul>
       );
     }

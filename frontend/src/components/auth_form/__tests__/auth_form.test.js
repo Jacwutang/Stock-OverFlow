@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from '../';
+import AuthForm from '../auth_form';
 
-it('Home renders without crashing', () => {
+it('AuthForm renders without crashing', () => {
   // const div = document.createElement('div');
-  // ReactDOM.render(<Home />, div);
+  // ReactDOM.render(<AuthForm />, div);
   // ReactDOM.unmountComponentAtNode(div);
 });
