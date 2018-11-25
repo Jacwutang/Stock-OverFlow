@@ -1,4 +1,4 @@
-.nav{
+.nav {
   border: 1px solid red;
   display: flex;
   justify-content: space-between;
@@ -8,22 +8,21 @@
   height: 70px;
 }
 
-.logo{
+.logo {
   height: 5vh;
   width: 5vw;
-  flex:1;
+  flex: 1;
 }
-.navbar_right{
+.navbar_right {
   display: flex;
   list-style: none;
   justify-content: space-evenly;
   flex: 1;
-
 }
-.navbar_left{
-    display: flex;
-    justify-content: space-between;
-    flex:1;
-    align-items: center;
-    height: 100%;
+.navbar_left {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  align-items: center;
+  height: 100%;
 }

@@ -1,24 +1,28 @@
 import React, { Component } from 'react';
+import { AuthRoute, ProtectedRoute } from '../../util/route_util.js';
+import { Route, Link, Redirect, Switch } from 'react-router-dom';
 import styles from './index.module.css';
-import Layout from '../layout';
-import Header from '../header';
-import Footer from '../footer'
-class App extends Component {
-
-  render() {
-    return (
-
-      <Layout>
-        <main className={styles.main}>
-        <section> Content 1</section>
-        <section> Content 2</section>
-        <section> Content 3</section>
-        </main>
-      </Layout>
 
 
-    )
-  }
-}
+import AuthForm from '../auth_form';
+import Home from '../home';
+import User from '../user';
+
+
+const App = () => (
+  <div>
+    <AuthRoute path="/login" component={AuthForm} />
+    <AuthRoute path="/signup" component={AuthForm} />
+
+    <Route exact path="/" component={Home} />
+
+    <ProtectedRoute path="/user" component={User} />
+
+  </div>
+);
 
 export default App;
+
+
+
+// <ProtectedRoute path="/user" component={User} />
