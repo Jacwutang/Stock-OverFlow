@@ -12,6 +12,11 @@ module.exports = {
   },
   companies:{
     create: sql("companies/create.sql"),
+    stocks:{
+    create: sql("stocks/create.sql")
+  },
+  watchlists:{
+    create: sql("watchlists/create.sql")
   }
 };
 
