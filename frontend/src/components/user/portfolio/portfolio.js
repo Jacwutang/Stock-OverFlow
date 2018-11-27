@@ -1,6 +1,9 @@
 import React, {Component} from "react";
-import Cash from "./cash";
-import Stocks from './stocks';
+import CashOverviewIcon from "./cash_overview_icon";
+import StocksOverviewIcon from './stocks_overview_icon';
+import StocksList from './stocks_list';
+// import StockChart from '../util/stock_chart';
+
 class Portfolio extends Component{
   constructor(props){
     super(props);
@@ -10,8 +13,8 @@ class Portfolio extends Component{
     return(
       <div>
       <h1>  Portfolio </h1>
-      <Cash />
-      <Stocks />
+      <CashOverviewIcon />
+      <StocksOverviewIcon />
       </div>
     );
   }

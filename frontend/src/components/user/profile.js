@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-// import StockChart from '../util/stock_chart';
 import Portfolio from './portfolio';
 class Profile extends Component{
   constructor(props){
