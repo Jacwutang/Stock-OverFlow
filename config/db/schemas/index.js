@@ -9,6 +9,12 @@ module.exports = {
     insert: sql("users/insert.sql"),
     empty:  sql("users/empty.sql"),
     seed:   sql("users/seed.sql")
+  },
+  stocks:{
+    create: sql("stocks/create.sql")
+  },
+  watchlists:{
+    create: sql("watchlists/create.sql")
   }
 };
 
