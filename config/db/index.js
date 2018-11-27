@@ -10,6 +10,7 @@ const initOptions = {
     // with different access API-s.
 
     obj.users = new repos.Users(obj, pgp);
+    obj.companies = new repos.Companies(obj,pgp);
   }
 };
 const pgp = require("pg-promise")(initOptions);
