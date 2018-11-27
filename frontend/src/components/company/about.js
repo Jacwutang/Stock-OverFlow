@@ -1,15 +1,14 @@
 import React, {Component} from "react";
 
-class Profile extends Component{
+class About extends Component{
   constructor(props){
     super(props);
   }
-
   render(){
     return(
-      <h1> Company Profile </h1>
+      <h1> About Company </h1>
     );
   }
 }
 
-export default Profile;
+export default About;
