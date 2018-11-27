@@ -16,7 +16,7 @@ const App = () => (
 
     <Route exact path="/" component={Home} />
 
-    <ProtectedRoute path="/user" component={User} />
+    <Route path="/user" component={User} />
 
   </div>
 );

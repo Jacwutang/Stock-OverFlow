@@ -2,8 +2,10 @@
   border: 1px solid red;
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 100%;
   margin: auto;
+  margin-top: 0;
+  margin-bottom: 0;
   align-items: center;
   height: 70px;
 }
