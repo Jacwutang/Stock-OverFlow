@@ -22,10 +22,10 @@ class CompaniesRepository {
        return this.db.none(schema.create);
   }
 
-  //Insert company
-  insert() {
-
-        return this.db.one(schema.insert, []);
+  //Insert a company record
+  insert(company) {
+      const{name, symbol, ceo, biography,location,founding_year,employees} = company;
+      return this.db.one(schema.insert, [name, symbol, ceo, biography,location,founding_year,employees]);
   }
 
    // Removes all records from the table;
@@ -37,16 +37,8 @@ class CompaniesRepository {
         return this.db.oneOrNone(
           'SELECT * FROM companies WHERE id = $1', +id
         );
-  }
-
-  findByName(name) {
-      return this.db.oneOrNone(
-        'SELECT * FROM companies WHERE name = $1', name
-      )
-  }
-
-
-}
+   }
+ }
 
 //////////////////////////////////////////////////////////
 // Example of statically initializing ColumnSet objects:

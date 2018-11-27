@@ -22,10 +22,10 @@ class WatchListsRepository {
        return this.db.none(schema.create);
   }
 
-  //Insert
-  insert() {
-
-        return this.db.one(schema.insert, []);
+  //Insert a watchlist record
+  insert(watchItem) {
+    const {user_id, company_id} = watchItem;
+    return this.db.one(schema.insert,[user_id,company_id]);
   }
 
    // Removes all records from the table;
@@ -38,11 +38,7 @@ class WatchListsRepository {
           'SELECT * FROM watchlists WHERE id = $1', +id
         );
   }
-
-
-
-
-}
+ }
 
 //////////////////////////////////////////////////////////
 // Example of statically initializing ColumnSet objects:

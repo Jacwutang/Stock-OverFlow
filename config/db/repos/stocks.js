@@ -22,10 +22,10 @@ class StocksRepository {
        return this.db.none(schema.create);
   }
 
-  //Insert a user w/username & password
-  insert() {
-
-        return this.db.one(schema.insert, []);
+  //Insert a stock record
+  insert(stock) {
+      const {user_id, company_id, shares} = stock;
+      return this.db.one(schema.insert, [user_id,company_id,shares]);
   }
 
    // Removes all records from the table;
@@ -37,12 +37,8 @@ class StocksRepository {
         return this.db.oneOrNone(
           'SELECT * FROM stocks WHERE id = $1', +id
         );
-  }
-
-
-
-
-}
+   }
+ }
 
 //////////////////////////////////////////////////////////
 // Example of statically initializing ColumnSet objects:
