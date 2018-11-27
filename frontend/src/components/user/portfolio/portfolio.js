@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-
+import Cash from "./cash";
+import Stocks from './stocks';
 class Portfolio extends Component{
   constructor(props){
     super(props);
@@ -7,9 +8,15 @@ class Portfolio extends Component{
 
   render(){
     return(
-      <h1> Portfolio </h1>
+      <div>
+      <h1>  Portfolio </h1>
+      <Cash />
+      <Stocks />
+      </div>
     );
   }
 }
+
+
 
 export default Portfolio;
