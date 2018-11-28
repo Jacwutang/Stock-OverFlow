@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import Company from './Company';
+import Company from './company';
 const mapStateToProps = (state) => ({
 
 });
