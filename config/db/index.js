@@ -9,11 +9,10 @@ const initOptions = {
     // Database Context (dc) is mainly useful when extending multiple databases
     // with different access API-s.
 
-    obj.users = new repos.Users(obj, pgp);
-    obj.companies = new repos.Companies(obj,pgp);
-    obj.stocks = new repos.Stocks(obj,pgp);
-    obj.watchlists = new repos.WatchLists(obj,pgp);
-
+    obj.users = new repos.Users(obj, pgp),
+    obj.companies = new repos.Companies(obj,pgp),
+    obj.stocks = new repos.Stocks(obj,pgp),
+    obj.watchlists = new repos.WatchLists(obj,pgp)
   }
 };
 const pgp = require("pg-promise")(initOptions);

@@ -8,7 +8,7 @@ const WatchLists = require("./watchlists");
 
 module.exports = {
   Users,
-  Companies
+  Companies,
   Stocks,
   WatchLists
 };

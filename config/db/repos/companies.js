@@ -19,13 +19,13 @@ class CompaniesRepository {
 
   // Creates the table;
   create() {
-       return this.db.none(schema.create);
+      return this.db.none(schema.create);
   }
 
   //Insert a company record
   insert(company) {
       const{name, symbol, ceo, biography,location,founding_year,employees} = company;
-      return this.db.one(schema.insert, [name, symbol, ceo, biography,location,founding_year,employees]);
+      return this.db.one(schema.insert, [name, symbol, ceo, biography,location,founding_year,employees]);;
   }
 
    // Removes all records from the table;

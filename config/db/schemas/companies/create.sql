@@ -10,5 +10,5 @@ CREATE TABLE ${schema~}.companies (
   biography VARCHAR NOT NULL,
   location VARCHAR NOT NULL,
   founding_year INT NOT NULL,
-  employees INT NOT NULL,
+  employees INT NOT NULL
 );
